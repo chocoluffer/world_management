@@ -1,0 +1,50 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:jest/recommended"
+  ],
+  "plugins": [
+    "react",
+    "react-native",
+    "jest"
+  ],
+  "parser": "babel-eslint",
+  "env": {
+    "jest/globals": true,
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "plugins": ["jest"],
+  "rules": {
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/forbid-prop-types": "off",
+    "class-methods-use-this": "off",
+    "no-use-before-define": "off",
+    "comma-dangle": ["error", "always-multiline"],
+    "quotes": ["error", "single"],
+    "no-mixed-operators": [
+      "error",
+      {
+        "groups": [
+          ["&", "|", "^", "~", "<<", ">>", ">>>"],
+          ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
+          ["&&", "||"],
+          ["in", "instanceof"]
+        ],
+        "allowSamePrecedence": true
+      }
+    ]
+  },
+  "globals": {
+    "mixpanel": true
+  }
+}
