@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import CoreStyles from './src/styles';
+
 export default class App extends Component {
   setMethod = (method) => {
     console.log(method)
@@ -11,8 +13,8 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text onPress={() => this.setMethod('city')}>By City</Text>
-        <Text onPress={() => this.setMethod('industry')}>By Industry</Text>
+        <Text style={styles.button} onPress={() => this.setMethod('city')}>By City</Text>
+        <Text style={styles.button} onPress={() => this.setMethod('industry')}>By Industry</Text>
         <Text>test</Text>
       </View>
     );
@@ -26,4 +28,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  button: {
+    height: 60,
+    fontSize: 18,
+    backgroundColor: CoreStyles.colors.primary,
+    color: CoreStyles.colors.text.light,
+  }
 });

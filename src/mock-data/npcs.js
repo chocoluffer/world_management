@@ -1,15 +1,15 @@
 // API will eventually pass these as numeric values
-city_names = {
+const city_names = {
    AMERE: 0,
    DAEOPOLIS: 1,
 };
 
-races = {
+const races = {
   HUMAN: 0,
   ELF: 1,
 };
 
-industry = {
+const industry = {
   FOOD: 0,
   GOVERNMENT: 1,
 };
@@ -22,6 +22,7 @@ const npcs = [
     occupation: 'alcohol infused pastries bakery owner',
     race: races.HUMAN,
     city: city_names.AMERE,
+    public: true,
   },
   {
     name: 'Faelynn',
@@ -31,3 +32,12 @@ const npcs = [
     city: city_names.AMERE,
   }
 ];
+
+// there are ofc npc generating sites, but perhaps having availability of seeing tailored ones is appealing --> QA tho?
+// "star" NPCS => a dashboard that shows favorite NPCs
+// we have filters, and user can provide their own filters too lol
+const dbSettings = [
+  showPublicNpcs: true,
+]
+
+export default npcs;
