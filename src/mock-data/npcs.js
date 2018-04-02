@@ -36,8 +36,8 @@ const npcs = [
 // there are ofc npc generating sites, but perhaps having availability of seeing tailored ones is appealing --> QA tho?
 // "star" NPCS => a dashboard that shows favorite NPCs
 // we have filters, and user can provide their own filters too lol
-const dbSettings = [
-  showPublicNpcs: true,
-]
+// const dbSettings = [
+//   showPublicNpcs: true,
+// ]
 
 export default npcs;

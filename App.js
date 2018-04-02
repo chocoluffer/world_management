@@ -1,22 +1,36 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+// import { connect } from 'react-redux';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import { createLogger } from 'redux-logger';
+
+const loggerMiddleware = createLogger()
+import rootReducer from './src/reducers';
+
+const store = createStore(
+  rootReducer,
+  {},
+  applyMiddleware(
+    thunkMiddleware,
+    loggerMiddleware
+  )
+)
 
 import CoreStyles from './src/styles';
+import { NpcNavigator } from './src/util';
+import { SelectNpcSortContainer } from './src/features';
 
 export default class App extends Component {
-  setMethod = (method) => {
-    console.log(method)
-    // set into state
-    // navigate to proper container
-  }
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.button} onPress={() => this.setMethod('city')}>By City</Text>
-        <Text style={styles.button} onPress={() => this.setMethod('industry')}>By Industry</Text>
-        <Text>test</Text>
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <NpcNavigator />
+        </View>
+      </Provider>
     );
   }
 }
