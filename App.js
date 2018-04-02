@@ -27,9 +27,7 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <View style={styles.container}>
-          <NpcNavigator />
-        </View>
+        <NpcNavigator />
       </Provider>
     );
   }
