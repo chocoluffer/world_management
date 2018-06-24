@@ -21,29 +21,30 @@ const store = createStore(
 import CoreStyles from './src/styles';
 import { NpcNavigator } from './src/util';
 import { SelectNpcSortContainer } from './src/features';
+import CharacterForm from './src/features/character-form.component';
 
 export default class App extends Component {
 
   render() {
     return (
       <Provider store={store}>
-        <NpcNavigator />
+        <CharacterForm />
       </Provider>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  button: {
-    height: 60,
-    fontSize: 18,
-    backgroundColor: CoreStyles.colors.primary,
-    color: CoreStyles.colors.text.light,
-  }
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+//   button: {
+//     height: 60,
+//     fontSize: 18,
+//     backgroundColor: CoreStyles.colors.primary,
+//     color: CoreStyles.colors.text.light,
+//   }
+// });
